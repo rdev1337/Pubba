@@ -58,6 +58,7 @@ a{color:#065f46;text-decoration:none}a:hover{text-decoration:underline}
 .btn-primary{display:inline-block;border:none;background:#065f46;color:#fff;padding:10px 16px;border-radius:8px;font-weight:600;cursor:pointer}
 .btn-primary:hover{background:#064e3b}
 
+<<<<<<< HEAD
 /* ===== Footer overlap fixes (drop-in) ===== */
 
 /* 1) Never let images overflow their cells */
@@ -101,6 +102,21 @@ a{color:#065f46;text-decoration:none}a:hover{text-decoration:underline}
 }
 
 
+=======
+.site-footer{margin-top:48px;background:#064e3b;color:#e6fffa}
+.site-footer .grid-4{display:grid;grid-template-columns:1fr;gap:24px;padding:32px 0}
+.site-footer h4{margin:0 0 8px 0}
+.site-footer ul{margin:0}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding:12px 0;background:#064635}
+.flex-between{display:flex;justify-content:space-between;align-items:center}
+.footer-bottom .links a{color:#e6fffa;margin-left:16px}
+@media(min-width:768px){
+  .hero-img{height:420px}
+  .site-footer .grid-4{grid-template-columns:repeat(4,1fr)}
+  .grid-2{grid-template-columns:1fr 1fr}
+}
+
+>>>>>>> origin/main
 /* Shell */
 .navbar{position:sticky;top:0;z-index:40;background:#f9f9f2;border-bottom:1px solid #e5e7eb}
 .container{max-width:1120px;margin:0 auto;padding:0 16px}
