@@ -1,0 +1,57 @@
+form.contact-form(action="#" method="post")
+  .grid-2
+    .field
+      label(for="first") Full Name*
+      input#first(type="text" placeholder="First name" required)
+    .field
+      label(for="last") &nbsp;
+      input#last(type="text" placeholder="Last name")
+  .grid-2
+    .field
+      label(for="company") Company Name*
+      input#company(type="text" placeholder="ABC Pvt. Ltd." required)
+    .field
+      label(for="email") Company Email ID*
+      input#email(type="email" placeholder="name@company.com" required)
+  .grid-2
+    .field
+      label Country
+      select
+        option India
+        option USA
+        option Australia
+    .field
+      label State/Province
+      input(type="text" placeholder="State")
+  .grid-2
+    .field
+      label Phone Number*
+      .phone
+        select
+          option +91
+          option +1
+          option +61
+        input(type="tel" required placeholder="Phone number")
+    .field
+      label Your Industry*
+      select(required)
+        option Pharmaceuticals
+        option Food & Beverage
+        option Retail Supply
+  .field
+    label Product*
+    select(required)
+      option Virgin Sesame Oil
+      option Refined Sesame Oil
+      option Sesame Seeds
+  .field
+    label You’re looking for? (select all that apply)
+    .chips
+      each tag in ['Retail Supply','Food Service & HoReCa','Private Label','Custom Formulations','Bulk & Manufacturing','Trial/Sample Request']
+        label.chip
+          input(type="checkbox")
+          span= tag
+  .field
+    label Message
+    textarea(placeholder="Start typing your message here…" rows="4")
+  button.btn-primary(type="submit") SUBMIT

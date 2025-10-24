@@ -1,0 +1,30 @@
+header.navbar
+  .container.navbar-inner
+    // LEFT
+    nav.nav-group.nav-left
+      a(href="/products"  class=(url && url.startsWith('/products')  ? 'nav-link active has-caret' : 'nav-link has-caret')) PRODUCTS
+      a(href="/who-we-are" class=(url && url.startsWith('/who-we-are') ? 'nav-link active' : 'nav-link')) WHO WE ARE
+      a(href="/our-brand"  class=(url && url.startsWith('/our-brand')  ? 'nav-link active' : 'nav-link')) OUR BRAND
+
+    // CENTER (SVG logo)
+    a.brand-center(href="/" aria-label="BNB — Home")
+      img.logo-svg(src="/images/brand-mark.svg" alt="BNB")
+
+    // RIGHT
+    nav.nav-group.nav-right
+      a(href="/solutions" class=(url && url.startsWith('/solutions') ? 'nav-link active has-caret' : 'nav-link has-caret')) SOLUTIONS
+      a(href="/newsroom" class=(url && url.startsWith('/newsroom') ? 'nav-link active' : 'nav-link')) NEWSROOM
+      a(href="/contact"  class=(url && url.startsWith('/contact')  ? 'nav-link active' : 'nav-link')) CONTACT
+
+    // Mobile toggle
+    button#menuBtn.nav-toggle(type="button" aria-label="Open menu") ☰
+
+  // Mobile menu
+  nav#mobileMenu.nav-mobile.hidden
+    .container
+      a(href="/products"  class="nav-mobile-link") PRODUCTS
+      a(href="/who-we-are" class="nav-mobile-link") WHO WE ARE
+      a(href="/our-brand"  class="nav-mobile-link") OUR BRAND
+      a(href="/solutions"  class="nav-mobile-link") SOLUTIONS
+      a(href="/newsroom"   class="nav-mobile-link") NEWSROOM
+      a(href="/contact"    class="nav-mobile-link") CONTACT
