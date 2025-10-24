@@ -1,0 +1,13 @@
+{
+  "name": "bnb-express-pug-site",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch app.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "pug": "^3.0.2"
+  }
+}

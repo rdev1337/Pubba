@@ -1,0 +1,52 @@
+footer.site-footer
+  .container.footer-grid
+    // LEFT: brand column split into logo (row 1) and text (row 2)
+    .brand-logo
+      img.footer-logo(src="/images/brand-bot.svg" alt="BNB — B.N.EXPORTS PRIVATE LIMITED")
+    .brand-text
+      .brand-lines
+        div.brand-line-top B.N.EXPORTS
+        div.brand-line-bottom PRIVATE LIMITED
+      p.footer-blurb
+        | Aenean sed nullam pellentesque suscipit molestie a malesuada dolor sollicitudin
+        | vulputate sed senectus in nunc scelerisque libero praesent orci sit fringilla
+        | odio sem at sed rhoncus tellus sed dignissim enim.
+
+    // COL 2 — WHO WE ARE
+    .footer-col
+      h4.footer-head WHO WE ARE
+      ul.footer-list
+        li: a(href="/who-we-are") Our Story
+        li: a(href="/who-we-are#certs") Certifications
+        li: a(href="/who-we-are#infra") Infrastructure
+
+    // COL 3 — PRODUCTS
+    .footer-col
+      h4.footer-head PRODUCTS
+      ul.footer-list
+        li: a(href="/products") Sesame Seeds
+        li: a(href="/products#oils") Sesame Oils
+
+    // COL 4 — Solutions
+    .footer-col
+      h4.footer-head Solutions
+      ul.footer-list
+        li: a(href="/solutions#private-label") Private Label
+        li: a(href="/solutions#bulk") Bulk Export
+        li: a(href="/solutions#custom") Custom Formulation
+
+    // COL 5 — Stories
+    .footer-col
+      h4.footer-head Stories
+      ul.footer-list
+        li: a(href="/newsroom#insights") Insights
+        li: a(href="/newsroom#updates") Updates
+        li: a(href="/newsroom#gallery") Gallery
+
+  .footer-bottom
+    .container.bottom-row
+      p.bottom-copy © #{new Date().getFullYear()} B.N.EXPORTS PVT. LTD. All rights reserved.
+      .bottom-links
+        a(href="/privacy") Privacy Policy
+        a(href="/terms") Terms & Conditions
+        a(href="/cookies") Cookie Settings

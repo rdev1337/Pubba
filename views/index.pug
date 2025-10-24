@@ -1,0 +1,106 @@
+extends ./layout.pug
+
+block content
+  // ===== 1) Elevator pitch + video hero =====
+  section.hero-video
+    .container
+      p.pitch
+        | Here goes the briefest & the most smoothest elevator pitch for our
+        | company. The key points to focus on are 
+        strong why do we exist 
+        | & 
+        strong how are we bringing in positive change 
+        | in the world with our work.
+    .video-frame
+      // background image; swap src
+      img.video-bg(src="/images/hero-plant.png" alt="Plant")
+      button#playVideo.play-btn(aria-label="Play video")
+        span ▶
+
+  // ===== 2) Our Scale in Numbers + certs =====
+  section.scale-numbers
+    .container.grid-scale
+      .left-title
+        h2.kicker Our Scale in
+        h2.kicker Accent Numbers
+          // NOTE: Keep exact line-breaks for composition
+      .right-badges
+        .badge
+          h3 16,000+
+          p LTR/DAY
+          span.note Production Capacity
+        .badge
+          h3 50,000+
+          p LTR/DAY
+          span.note Refining Capacity
+        .badge
+          h3 5,000+
+          p BOTTLES/DAY
+          span.note Bottling Capacity
+        .badge
+          h3 650+
+          p TN
+          span.note Tank Storage
+        .badge
+          h3 5,000+
+          p TN
+          span.note Raw Good Storage
+    .container
+      .certs-wrap
+        .pill Internationally Certified
+        ul.certs
+          li: img(src="/images/certs/fssai.svg" alt="FSSAI")
+          li: img(src="/images/certs/fda.svg" alt="FDA")
+          li: img(src="/images/certs/gmp.svg" alt="GMP")
+          li: img(src="/images/certs/star-k.svg" alt="Star-K")
+          li: img(src="/images/certs/iso.svg" alt="ISO")
+          li: img(src="/images/certs/haccp.svg" alt="HACCP")
+
+  // ===== 3) Products strip =====
+  section.products-strip
+    .container
+      .heading-row
+        small.label PRODUCTS
+        h2.title Sesame Oils & Seeds
+      .product-grid
+        each i in [1,2,3,4]
+          .prod
+            img(src="/images/products/bottle.png" alt="Product")
+
+  // ===== 4) Trusted Worldwide banner =====
+  section.trusted-banner
+    .map-layer
+      img(src="/images/world-map.png" alt="World map")
+    .container.banner-inner
+      h3.banner-title Trusted Worldwide
+      p.banner-sub Catering 10+ countries over 20 industry-leading companies.
+      .stat-pill 2.5 Million+ people around the world consume our oil daily
+
+
+  // ===== 5) Stories carousel =====
+  section.stories
+    .container
+      .stories-head
+        h2 Read our Stories
+        .arrows
+          button#prevStory.arrow(type="button" aria-label="Prev") ‹
+          button#nextStory.arrow(type="button" aria-label="Next") ›
+      .cards-row#storiesRow
+        each c,i in [1,2,3,4,5,6]
+          a.card(href="#")
+            .thumb(style=`--c:${i%3===0?'#6ba49e':i%2===0?'#df7f4c':'#9cc28a'}`)
+            .meta
+              h4 Stories of soil sweat and everything in between
+              .foot
+                span.date Jun 15, 2025
+                span.tag= i%3===0 ? 'GALLERY' : (i%2===0 ? 'UPDATES' : 'INSIGHTS')
+
+  // ===== 6) Contact CTA (left blurb + form) =====
+  section.contact-cta
+    .container.grid-cta
+      .cta-left
+        h3 Want to know more about our Products?
+        p Fill in a few quick details & we’ll respond with the right info and next steps.
+        .mini-help Have questions about something else? Call us on 0800 1234 5678.
+      .cta-form
+        include contact-form

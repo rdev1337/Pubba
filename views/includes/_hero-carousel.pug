@@ -1,0 +1,16 @@
+section.hero
+  .container
+    .hero-frame
+      each s, i in heroSlides
+        .hero-slide(class=i===0?'active':'')
+          img(src=s.img alt="Slide" class="hero-img")
+          .hero-gradient
+          .hero-pill
+            span.text= s.pill
+            if s.cta
+              a.cta(href=s.cta.href)= s.cta.label
+          .hero-stat= s.stat
+      .hero-dots
+        button.hero-dot(data-index="0" aria-label="Slide 1")
+        button.hero-dot(data-index="1" aria-label="Slide 2")
+        button.hero-dot(data-index="2" aria-label="Slide 3")
