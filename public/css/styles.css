@@ -58,18 +58,48 @@ a{color:#065f46;text-decoration:none}a:hover{text-decoration:underline}
 .btn-primary{display:inline-block;border:none;background:#065f46;color:#fff;padding:10px 16px;border-radius:8px;font-weight:600;cursor:pointer}
 .btn-primary:hover{background:#064e3b}
 
-.site-footer{margin-top:48px;background:#064e3b;color:#e6fffa}
-.site-footer .grid-4{display:grid;grid-template-columns:1fr;gap:24px;padding:32px 0}
-.site-footer h4{margin:0 0 8px 0}
-.site-footer ul{margin:0}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding:12px 0;background:#064635}
-.flex-between{display:flex;justify-content:space-between;align-items:center}
-.footer-bottom .links a{color:#e6fffa;margin-left:16px}
-@media(min-width:768px){
-  .hero-img{height:420px}
-  .site-footer .grid-4{grid-template-columns:repeat(4,1fr)}
-  .grid-2{grid-template-columns:1fr 1fr}
+/* ===== Footer overlap fixes (drop-in) ===== */
+
+/* 1) Never let images overflow their cells */
+.site-footer img{max-width:100%;height:auto;display:block}
+
+/* 2) Make grid rows grow with content (prevents items riding on top of each other) */
+.footer-grid{
+  align-items:start;                 /* align from top of each cell */
+  grid-auto-rows: minmax(min-content, auto);
 }
+
+/* 3) Default: let everything flow in normal order on small screens */
+.brand-logo,
+.brand-text,
+.footer-col{ grid-row:auto !important; }   /* undo any earlier row forcing */
+
+/* 4) Only on desktop, place items into two rows (logo row + text/links row) */
+@media (min-width:1024px){
+  .footer-grid{
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;        /* row-1: logo, row-2: text + links */
+    row-gap:12px;
+  }
+  .brand-logo{ grid-column:1; grid-row:1; }
+  .brand-text{ grid-column:1; grid-row:2; }
+  .footer-col{ grid-row:2; }              /* aligns headings with brand text */
+}
+
+/* 5) Safer text metrics so long lines don’t collide */
+.footer-blurb{ line-height:1.5; word-break:break-word; }
+.footer-head{ line-height:1.2; }
+.footer-list li{ line-height:1.35; }
+
+/* 6) Ensure the top grid sits above the bottom bar (in case of stacking context bugs) */
+.footer-grid{ position:relative; z-index:1; }
+.footer-bottom{ position:relative; z-index:0; }
+
+/* 7) Extra spacing insurance on very small screens */
+@media (max-width:480px){
+  .footer-grid{ row-gap:24px; }
+}
+
 
 /* Shell */
 .navbar{position:sticky;top:0;z-index:40;background:#f9f9f2;border-bottom:1px solid #e5e7eb}
